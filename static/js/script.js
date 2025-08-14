@@ -82,3 +82,14 @@ document.addEventListener('keydown', function (event) {
         document.getElementById('btn-punto').click();
     }
 });
+
+
+fetch("https://mi-backend.onrender.com/calcular", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ a: 5, b: 3 })
+})
+    .then(res => res.json())
+    .then(data => {
+        console.log("Resultado:", data.resultado);
+});
